@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tehnologii</title>
+<style>
+  html, body { margin: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, Arial, sans-serif; color: #222; }
+
+  /* grid of technologies */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px 48px;
+    padding: 10px 20px 30px;
+  }
+  .tile { cursor: pointer; }
+  .tile img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 100% center;      /* show only the photo part of the banner */
+    display: block;
+    border-radius: 8px;
+    background: #eee;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .tile button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 11px 6px;
+    border: 0;
+    border-radius: 6px;
+    background: #fcc419;                /* yellow button */
+    color: #222;
+    font: 500 19px "Segoe UI", Roboto, Arial, sans-serif;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+  }
+  .tile:hover img { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+  .tile:hover button { background: #f5b400; }
+  .tile.active button { background: #e8772e; color: #fff; }   /* selected = orange */
+
+  /* info section */
+  .info { display: none; padding: 20px 40px 40px; border-top: 1px solid #eee; }
+  .info.show { display: block; animation: fade 0.4s ease; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .info h2 { text-align: center; font-size: 44px; font-weight: 500; margin: 10px 0 24px; }
+  .banner { display: block; width: 100%; max-width: 1100px; margin: 0 auto 28px; }
+  .txt { font-size: 17px; line-height: 1.6; }
+  .txt p { margin: 0 0 12px; }
+  .txt h4 { font-size: 17px; margin: 0 0 6px; }
+  .txt ol, .txt ul { margin: 0 0 12px; padding-left: 26px; }
+  .cols { column-count: 2; column-gap: 48px; margin-top: 16px; }   /* 2 columns on desktop */
+  .blk { break-inside: avoid; margin-bottom: 14px; }
+
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 10px; }
+    .tile button { font-size: 16px; }
+    .info { padding: 16px 12px 30px; }
+    .info h2 { font-size: 30px; }
+    .cols { column-count: 1; }
+    .txt { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid">
+  <div class="tile" data-i="0">
+    <img src="tehnologii/tipar%20uv.jpg" alt="Tipar UV">
+    <button>Tipar UV</button>
+  </div>
+  <div class="tile" data-i="1">
+    <img src="tehnologii/broderie.jpg" alt="Broderie">
+    <button>Broderie</button>
+  </div>
+  <div class="tile" data-i="2">
+    <img src="tehnologii/decalcomanie.jpg" alt="Decalcomanie">
+    <button>Decalcomanie</button>
+  </div>
+  <div class="tile" data-i="3">
+    <img src="tehnologii/embosare.jpg" alt="Embosare">
+    <button>Embosare</button>
+  </div>
+  <div class="tile" data-i="4">
+    <img src="tehnologii/gravura%20laser.jpg" alt="Gravura Laser">
+    <button>Gravura Laser</button>
+  </div>
+  <div class="tile" data-i="5">
+    <img src="tehnologii/serigrafie.jpg" alt="Serigrafie">
+    <button>Serigrafie</button>
+  </div>
+  <div class="tile" data-i="6">
+    <img src="tehnologii/sublimare.jpg" alt="Sublimare">
+    <button>Sublimare</button>
+  </div>
+  <div class="tile" data-i="7">
+    <img src="tehnologii/tampografie.jpg" alt="Tampografie">
+    <button>Tampografie</button>
+  </div>
+  <div class="tile" data-i="8">
+    <img src="tehnologii/termotransfer.jpg" alt="Termotransfer">
+    <button>Termotransfer</button>
+  </div>
+  <div class="tile" data-i="9">
+    <img src="tehnologii/dtf.jpg" alt="DTF">
+    <button>DTF</button>
+  </div>
+</div>
+
+  <div class="info" data-i="0">
+    <h2>Tipar UV</h2>
+    <img class="banner" src="tehnologii/tipar%20uv.jpg" alt="Tipar UV">
+    <div class="txt"><p>IMPRIMAREA UV este o formă de imprimare digitală care folosește lumini ultraviolete pentru a usca cerneala pe măsură ce aceasta este tipărită.</p><div class="cols"><div class="blk"><h4>Procesul pas cu pas:</h4><p>Modul de imprimare cu un printer flatbed UV este aproape identic cu modul de folosire al unei imprimante clasice cu jet de cerneală, cu mici diferențe:</p><ol><li>Se setează separat stratul de alb (dacă se imprimă sub toată grafica sau doar parțial),</li><li>Se setează dacă se imprimă sub sau deasupra graficii, respectiv dacă se folosește suportul rotativ pentru obiecte cilindrice sau nu.</li></ol></div><div class="blk"><h4>Detalii tehnice:</h4><ul><li>Imprimarea UV este similară cu cea tradițională, prin faptul că folosește cerneală. Dar spre deosebire de tipărirea tradițională în care cerneala se absoarbe în hârtie, cernelurile UV se usucă de la luminile ultraviolete care transformă aproape instantaneu cerneala lichidă într-un solid,</li><li>Se poate imprima pe: lemn, plastic, piele, plexiglas, carton, sticlă și multe altele.</li></ul></div><div class="blk"><h4>De ce este utilizată?</h4><p>Companiile de pretutindeni se străduiesc să găsească o metodă prin care să se diferențieze. Imprimarea UV vă poate câștiga atenția de care aveți nevoie din partea publicului țintă. Printarea UV oferă o soluție rapidă și bună pentru tiraje mici și medii și la cerere de imprimare, ce e mai mult extinde semnificativ granițele metodelor tradiționale de imprimare. Permite imprimarea și cu cerneală albă astfel obținem culori vii și pe suprafețe colorate.</p></div><div class="blk"><h4>Beneficii:</h4><ul><li>Calitate înaltă a imprimării,</li><li>Imprimare policromie,</li><li>Timp scurt de finalizare a lucrării,</li><li>Imprimarea imaginilor la o calitate înaltă,</li><li>Posibilitatea de imprimare a unor cantități mici,</li><li>Se poate printa și pe suprafețe rigide.</li></ul></div><div class="blk"><h4>Recomandări:</h4><ul><li>Dat fiind faptul că printul cu cerneală UV este un procedeu "digital", se pot folosi practic orice imagini, oricâte culori,</li><li>Doar dimensiunea graficii poate impune anumite granițe (pe o siglă de 5mm evităm să punem 5-6 rânduri de texte, etc.),</li><li>Trebuie avut în vedere materialul pe care se printează, deoarece pe anumite materiale cerneala UV nu aderă suficient de bine.</li></ul></div><div class="blk"><h4>Prețul poate varia în funcție de:</h4><ul><li>Cantitate, mărimea graficii.</li></ul></div></div></div>
+  </div>
+  <div class="info" data-i="1">
+    <h2>Broderie</h2>
+    <img class="banner" src="tehnologii/broderie.jpg" alt="Broderie">
+    <div class="txt"><p>Broderia computerizată este un procedeu prin care elementele grafice solicitate de client sunt prelucrate de un software conectat la mașinile de brodat. Broderia computerizată permite producția rapidă în cantități mici sau mari.</p><div class="cols"><div class="blk"><h4>Procesul pas cu pas:</h4><ol><li>Designul este digitizat folosind un software special,</li><li>Designul este salvat într-un fișier, care este încărcat în mașina de brodat,</li><li>Țesătura dorită pentru brodat este fixată în brațele mașinii,</li><li>Mașina de brodat este pornită și rulată până când designul dorit este complet și terminat.</li></ol></div><div class="blk"><h4>Detalii tehnice:</h4><ul><li>Broderia se folosește atunci când se dorește personalizarea pe șepci, tricouri, tricouri polo, haine, jachete, cămăși, genți, salopete, produse din fleece/polar, etc.</li></ul></div><div class="blk"><h4>De ce este utilizată?</h4><p>Personalizarea prin broderie conferă un caracter exclusivist și elegant articolelor promoționale pe care este realizată. Este o cusătură în relief realizată pe materiale textile, de către o mașină programată pe un anumit model. Broderia se folosește atunci când se dorește personalizarea pe șepci, tricouri, tricouri polo, haine, jachete, genți, salopete, produse din fleece/polar, etc.</p></div><div class="blk"><h4>Beneficii:</h4><ul><li>Nu se deteriorează după spălări multiple,</li><li>Conferă un aspect exclusivist produsului,</li><li>Impactul vizual este unul deosebit,</li><li>Cel mai bun raport calitate/preț pentru decorațiunile textile personalizate.</li></ul></div><div class="blk"><h4>Recomandări:</h4><ul><li>Folosiți numai culori și forme pline,</li><li>Convertiți-vă fonturile la curbe,</li><li>Mărimi fonturi și detalii: fonturile și detaliile pentru broderie ar trebui să aibă cel puțin 5mm înălțime pentru litere mici sau mari,</li><li>Formate fișiere: fișierele de tip vector (CDR, AI, PDF, EPS) sunt recomandate.</li></ul></div><div class="blk"><h4>Prețul poate varia în funcție de:</h4><ul><li>Cantitate, mărimea și complexitatea graficii respective, de materialul ce urmează a fi brodat.</li></ul></div></div></div>
+  </div>
+  <div class="info" data-i="2">
+    <h2>Decalcomanie</h2>
+    <img class="banner" src="tehnologii/decalcomanie.jpg" alt="Decalcomanie">
+    <div class="txt"><p>Decalcomania este procedeul de transfer al imaginii pe suprafețele din ceramică, sticlă, porțelan, etc., prin ardere la temperaturi înalte. Designul poate avea mai multe culori și poate fi poziționat pe orice parte a obiectului, indiferent de formă. Rezultatul are o rezistență limitată la mașina de spălat.</p><div class="cols"><div class="blk"><h4>Procesul pas cu pas:</h4><ol><li>Se pregătește grafica (descompunerea în culori, pregătirea stratului special pentru lacul de protecție),</li><li>Se printează filmele (pentru fiecare culoare + lac de transfer),</li><li>Se serigrafiază fiecare culoare, peste care se serigrafiază lacul de transfer,</li><li>Se taie/pregătește hârtia serigrafiată,</li><li>Se curăță obiectul,</li><li>Se înmoaie hârtia în apă,</li><li>Se aplică grafica pe substrat,</li><li>După uscare (în jur de 3-4 ore la temperatura camerei), se îndepărtează lacul de transfer,</li><li>Se curăță obiectul,</li><li>Se introduce în cuptor pentru ardere (în funcție de cerneala folosită, la o temperatură între 180 și 800 de grade Celsius),</li><li>După ardere, se curăță cănile și se ambalează.</li></ol><p>Fiindcă este un procedeu complex (se împarte în mai mulți pași, pregătirile sunt minuțioase), nu personalizăm unul sau doar câteva produse. Cantitatea minimă începe de la câteva zeci de bucăți, în funcție de complexitatea designului.</p></div><div class="blk"><h4>De ce este utilizată?</h4><p>Decalcomania este procedeul de transfer al imaginii pe suprafețele din ceramică, sticlă, porțelan, etc., prin ardere la temperaturi înalte. Designul poate avea mai multe culori și poate fi poziționat pe orice parte a obiectului, indiferent de formă. Rezultatul are o rezistență limitată la mașina de spălat.</p></div><div class="blk"><h4>Beneficii:</h4><ul><li>Personalizarea este foarte rezistentă,</li><li>Designul se poate aplica în mai multe locuri, atât în exterior, cât și în interior,</li><li>Impactul vizual este unul deosebit.</li></ul></div><div class="blk"><h4>Recomandări:</h4><ul><li>Se evită caracterele prea mici,</li><li>Folosiți culori liniare,</li><li>Formate fișiere: fișierele de tip vector (CDR, AI, PDF, EPS) sunt recomandate.</li></ul></div><div class="blk"><h4>Prețul poate varia în funcție de:</h4><ul><li>Tipul produsului, cantitatea, dimensiunile designului și numărul de culori conținute în acesta.</li></ul></div></div></div>
+  </div>
+  <div class="info" data-i="3">
+    <h2>Embosare</h2>
+    <img class="banner" src="tehnologii/embosare.jpg" alt="Embosare">
+    <div class="txt"><p>Embosarea este o tehnică de finisare care se utilizează pentru a crea relief pe diferite materiale. Această tehnică poate fi aplicată la o varietate de produse, inclusiv invitații, cărți de vizită, ambalaje, etichete și chiar hărți geografice. Procesul implică crearea unui model tridimensional prin aplicarea presiunii asupra materialului, evidențiind astfel zona dorită și creând un aspect și o senzație tactilă.</p><div class="cols"><div class="blk"><h4>Procesul pas cu pas:</h4><ol><li>Înainte de începerea procesului, se creează un design care urmează să fie embosat. Acest design poate conține texte, imagini sau orice alt element dorit,</li><li>Placa metalică gravată cu negativul designului este creată, aceasta reprezentând matricea pentru embosare,</li><li>Materialul care va fi embosat este pregătit, iar matricea este plasată în poziție,</li><li>Prin aplicarea presiunii, matricea este presată în material, evidențiind designul și creând relieful dorit.</li></ol></div><div class="blk"><h4>De ce este utilizată?</h4><ul><li>Adaugă un element vizual și tactil la produse, sporind estetica și calitatea percepută,</li><li>Poate fi utilizată pentru a evidenția logo-uri, nume de companii sau alte elemente de branding,</li><li>Embosarea poate crea un efect artistic și elegant, aducând un plus de valoare produselor finite.</li></ul></div><div class="blk"><h4>Beneficii:</h4><ul><li>Oferă o dimensiune suplimentară și un aspect tridimensional designului,</li><li>Creează o senzație tactilă plăcută, invitând utilizatorii să simtă și să atingă produsul,</li><li>Ajută produsele să iasă în evidență și să se diferențieze în mulțime.</li></ul></div><div class="blk"><h4>Recomandări:</h4><ul><li>Designurile simple sunt mai ușor de evidențiat prin embosare,</li><li>Pentru detalii clare, este recomandat să aveți un design de înaltă rezoluție.</li></ul></div><div class="blk"><h4>Prețul poate varia în funcție de:</h4><ul><li>Dimensiunea și tipul materialului,</li><li>Pentru producții mai mari, costul pe unitate poate scădea.</li></ul></div></div></div>
+  </div>
+  <div class="info" data-i="4">
+    <h2>Gravura Laser</h2>
+    <img class="banner" src="tehnologii/gravura%20laser.jpg" alt="Gravura Laser">
+    <div class="txt"><p>GRAVURA este o procedură specială de inscripționare a obiectelor din metal, piele artificială realizată cu ajutorul laserului. Prin gravură laser se pot aplica și logouri cu mărime foarte mică.</p><div class="cols"><div class="blk"><h4>Procesul pas cu pas:</h4><ol><li>Grafica se convertește într-un fișier cu format special,</li><li>Acest fișier cu format special este trimis către un software special care poate interpreta aceste setări,</li><li>Obiectul se introduce în utilaj, se execută gravura.</li></ol></div><div class="blk"><h4>Detalii tehnice:</h4><p>Rezultatul gravării este influențat de materialul gravat. Metalul poate fi gravat, de exemplu, în mai multe moduri:</p><ul><li>Una dintre ele este gravura direct pe suprafața articolului. Aspectul său este modificat în funcție de tipul metalului,</li><li>Pe metalele vopsite sau anodizate, stratul de vopsea va fi îndepărtat și astfel culoarea metalului va fi dezvăluită (auriu sau argintiu),</li><li>Se pot marca și obiecte cilindrice (deținem suport rotativ special pentru utilajele de gravură).</li></ul></div><div class="blk"><h4>De ce este utilizată?</h4><p>Procedura de inscripționare prin gravură laser poate fi deosebit de complexă și delicată, oferind durabilitate în timp și acuratețe lucrărilor. Produce o imagine permanentă, extrem de detaliată și fină, cu o rezoluție de până la 1200 dpi.</p></div><div class="blk"><h4>Beneficii:</h4><ul><li>Produce o imagine permanentă, extrem de detaliată și fină,</li><li>Prin gravură laser se pot aplica și logouri cu mărime foarte mică,</li><li>Personalizarea este foarte rezistentă.</li></ul></div><div class="blk"><h4>Recomandări:</h4><ul><li>Folosiți numai culori și forme pline (pe anumite materiale se pot folosi și rastere, dar aceasta necesită o testare în prealabil),</li><li>Convertiți-vă fonturile la curbe,</li><li>Formatele fișierelor: fișierele de tip vector (CDR, AI, PDF, EPS) sunt obligatorii.</li></ul></div><div class="blk"><h4>Prețul variază în funcție de mai mulți factori:</h4><ul><li>Cantitate, mărimea designului și a tipului obiectului.</li></ul></div></div></div>
+  </div>
+  <div class="info" data-i="5">
+    <h2>Serigrafie</h2>
+    <img class="banner" src="tehnologii/serigrafie.jpg" alt="Serigrafie">
+    <div class="txt"><p>Serigrafia este o tehnică de imprimare tradițională folosită de mulți ani. Este procedeul prin care se imprimă diferite materiale, începând cu hârtia, materiale plastice și terminând cu textile sau metale.</p><div class="cols"><div class="blk"><h4>Procesul pas cu pas:</h4><ol><li>Designul este creat,</li><li>Ecranul este pregătit,</li><li>Emulsia este expusă,</li><li>Emulsia este spălată,</li><li>Produsul este pregătit pentru tipărire,</li><li>Cerneala este presată prin ecran direct pe suprafața produsului,</li><li>Produsul este uscat, apoi verificat.</li></ol></div><div class="blk"><h4>Detalii tehnice:</h4><ul><li>Aceste echipamente sunt utilizate pentru imprimarea în una sau mai multe culori, în regim manual sau semiautomat pe diferite produse, cu suprafață plană,</li><li>Pe scară largă, astfel de sisteme sunt folosite pentru imprimarea de tricouri, hârtie și carton, agende, carcase, produse industriale, textile, etc.,</li><li>Cu toate acestea, tehnica aceasta este cea mai des utilizată în industria textilă, imprimând de exemplu tricouri,</li><li>Serigrafia poate fi utilizată pentru a imprima grafica și modele pe țesături precum poliesterul, bumbacul, mătasea.</li></ul></div><div class="blk"><h4>De ce este utilizată?</h4><p>Unul dintre motivele pentru care tehnica de serigrafie este atât de larg utilizată este pentru că produce culori vii, chiar și pe țesături mai închise. De asemenea, se poate reproduce cu ușurință un design de mai multe ori. Acest lucru face ca serigrafia să fie o tehnică foarte eficientă pentru crearea loturilor medii și mari de îmbrăcăminte personalizată și a altor obiecte promoționale ce pot fi personalizate prin serigrafie.</p></div><div class="blk"><h4>Beneficii:</h4><ul><li>Rezistență ridicată a vopselelor la frecare, zgâriere și mai ales la raze UV,</li><li>Permite imprimarea în cantități mari,</li><li>Rezultat de înaltă calitate,</li><li>Poate fi utilizată pe o varietate de materiale,</li><li>Oricare suprafață plană poate fi utilizată pentru imprimare,</li><li>Este o metodă de imprimare foarte eficientă.</li></ul></div><div class="blk"><h4>Recomandări:</h4><ul><li>Pentru un rezultat de calitate, simplificați-vă designul,</li><li>Nu pot exista degradeuri, umbre,</li><li>Grafica trebuie să conțină nu mai mult de cinci culori diferite,</li><li>Dacă vreți să economisiți bani, folosiți culori mai puține,</li><li>Formate fișiere: fișierele de tip vector (CDR, AI, PDF, EPS) sunt recomandate.</li></ul></div><div class="blk"><h4>Prețul poate varia în funcție de:</h4><ul><li>Tipul produsului, cantitatea, dimensiunile designului și numărul de culori din grafică.</li></ul></div></div></div>
+  </div>
+  <div class="info" data-i="6">
+    <h2>Sublimare</h2>
+    <img class="banner" src="tehnologii/sublimare.jpg" alt="Sublimare">
+    <div class="txt"><p>Sublimarea este un proces care constă în transferul cernelii în textura materialului, la o temperatură de 180 de grade Celsius. Acest proces permite imprimarea policromă, cu o vizibilitate ridicată, conferind în același timp o rezistență remarcabilă în timp.</p><div class="cols"><div class="blk"><h4>Procesul pas cu pas:</h4><ol><li>Grafica se printează în oglindă pe o hârtie specială (hârtie de transfer),</li><li>După uscare, cerneala este transferată cu ajutorul unor prese sau calandre în suprafață (temperatura de 180 de grade Celsius, presiune mare, aproximativ 2-3 minute),</li><li>Este important de știut că nu se poate printa alb (nu funcționează pe materiale de culoare închisă),</li><li>Nu se pot sublima materiale naturale (bumbac, mătase, etc.).</li></ol></div><div class="blk"><h4>Detalii tehnice:</h4><ul><li>Se poate imprima pe poliester sau materiale cu un coating adecvat pentru sublimare,</li><li>Sublimarea se face pe textile sau pe alte suporturi precum ceramica, care au fost tratate în prealabil pentru sublimare,</li><li>Metoda permite personalizarea materialelor atât în culori Pantone, cât și în policromie.</li></ul></div><div class="blk"><h4>De ce este utilizată?</h4><p>În ceea ce privește produsele promoționale, sublimarea este o opțiune excelentă pentru a imprima articole precum tricouri, îmbrăcăminte sport, steaguri, mousepad-uri, căni, plăci ceramice sau lanyarduri.</p></div><div class="blk"><h4>Beneficii:</h4><ul><li>Imprimarea este rezistentă la intemperii și acțiuni mecanice,</li><li>Cerneala "nu se simte" pe suprafață (cerneala intră în substrat, nu va rămâne pe suprafața obiectului),</li><li>Hainele își mențin culoarea și vibrația chiar și după mai multe spălări,</li><li>Se pot imprima imagini colorate pe suprafețe dure,</li><li>Posibilitatea imprimării oricărei grafici, indiferent de complexitate,</li><li>Rapiditate pentru cantități mici.</li></ul></div><div class="blk"><h4>Recomandări:</h4><ul><li>Grafica trebuie să fie bitmap la 300 dpi (în cazul pozelor) sau vectorială (în cazul culorilor liniare),</li><li>Sublimarea funcționează numai pe suprafețe albe,</li><li>Sublimarea funcționează doar pe materiale sintetice sau pe alte materiale pre-tratate pentru a accepta cerneluri de sublimare.</li></ul></div><div class="blk"><h4>Prețul poate varia în funcție de:</h4><ul><li>Cantitate, numărul de culori, numărul de poziții.</li></ul></div></div></div>
+  </div>
+  <div class="info" data-i="7">
+    <h2>Tampografie</h2>
+    <img class="banner" src="tehnologii/tampografie.jpg" alt="Tampografie">
+    <div class="txt"><p>Tampografia este un procedeu de inscripționare care folosește un tampon din cauciuc siliconic ca mediu de transfer al cernelei.</p><div class="cols"><div class="blk"><h4>Procesul pas cu pas:</h4><ol><li>Se printează grafica pe film,</li><li>Se expune cliseul tampografic (preemulsionat),</li><li>Se spală cliseul,</li><li>Se usucă cliseul și se poziționează pe tampograf,</li><li>Se pregătește cerneala și se introduce în utilaj,</li><li>Se poziționează tamponul,</li><li>Se poziționează obiectul.</li></ol></div><div class="blk"><h4>Detalii tehnice:</h4><ul><li>Elementele cheie ale procedeului tampografic îl reprezintă tamponul, cliseul și cerneala, care permit decorarea obiectelor cu forme și texturi diferite,</li><li>Este folosit în cazul suprafețelor plane, cilindrice sau neregulate,</li><li>Metoda se folosește pentru imprimarea pe pixuri, brichete, brelocuri, raclete, ceasuri de birou și alte produse din material plastic, metal, piele, sticlă sau lemn.</li></ul></div><div class="blk"><h4>De ce este utilizată?</h4><p>Această metodă de imprimare este cea mai potrivită pentru tipărirea siglelor mici, denumirilor de brand, descrierii produsului și diferitelor decorațiuni.</p></div><div class="blk"><h4>Beneficii:</h4><ul><li>Se pot personaliza obiecte cu suprafață neregulată,</li><li>Se poate imprima cu auriu/argintiu,</li><li>Rezoluția de imprimare este de înaltă calitate,</li><li>Este ideală pentru realizarea unor imprimeuri mici,</li><li>Este eficientă din punct de vedere al costurilor.</li></ul></div><div class="blk"><h4>Recomandări:</h4><ul><li>Formate fișiere: fișierele de tip vector (CDR, AI, PDF, EPS) sunt recomandate,</li><li>Se pot folosi maxim 4 culori diferite,</li><li>O calitate mai bună a amprentei necesită o suprafață corespunzătoare.</li></ul></div><div class="blk"><h4>Prețul poate varia în funcție de:</h4><ul><li>Cantitate, numărul de culori, numărul de poziții.</li></ul></div></div></div>
+  </div>
+  <div class="info" data-i="8">
+    <h2>Termotransfer</h2>
+    <img class="banner" src="tehnologii/termotransfer.jpg" alt="Termotransfer">
+    <div class="txt"><p>TERMOTRANSFERUL este procedeul de personalizare realizat prin aplicarea la cald, cu presa, a unor folii speciale (de print sau doar cut) sau cerneluri (sublimare, serigrafie) de termotransfer. Expresia "termotransfer" este o denumire generică pentru toate tipurile de personalizare ce implică presarea la cald: sublimare, folie printabilă, folie de cut, serigrafie-transfer. Sublimarea este descrisă la capitolul "Sublimare".</p><div class="cols"><div class="blk"><h4>Procesul pas cu pas:</h4><ol><li>Se face descompunerea în culori a graficii, se printează filmele,</li><li>După aceasta urmează dezvoltarea ecranelor serigrafice, spălarea, uscarea acestora,</li><li>Sitele se poziționează pe masa de serigrafie, se execută lucrarea pe hârtia de transfer, se aplică adezivul, se usucă cu ajutorul tunelului de uscare,</li><li>Hârtia de transfer se va tăia la dimensiunea dorită și în final se aplică cu ajutorul presei pe substrat.</li></ol></div><div class="blk"><h4>Detalii tehnice:</h4><p>Folia printabilă este o folie specială, pe care se printează cu o imprimantă cu cerneală pe bază de solvent și se taie pe contur cu același utilaj. După îndepărtarea surplusului de material, folia se aplică cu ajutorul presei termice pe textil.</p><p>Aplicarea foliei de cut este similară cu cea a foliei printabile, cu următoarele diferențe:</p><ul><li>Folia de cut nu poate fi printată,</li><li>Este colorată în masă (nu se pot executa policromii, se lucrează doar din culorile existente),</li><li>Tăierea se execută în oglindă,</li><li>Se lucrează doar din fișiere vectoriale.</li></ul></div><div class="blk"><h4>De ce este utilizată?</h4><p>Dacă se respectă instrucțiunile de folosire, o imprimare prin termotransfer rezistă foarte bine în timp.</p></div><div class="blk"><h4>Beneficii:</h4><ul><li>Posibilitatea imprimării oricărei grafici,</li><li>Se poate imprima în mai multe culori,</li><li>Rapiditate pentru cantități mici și medii,</li><li>Rezistență excelentă la acțiuni mecanice / intemperii.</li></ul></div><div class="blk"><h4>Recomandări:</h4><ul><li>Formate fișiere: fișierele de tip vector (CDR, AI, PDF, EPS) sunt recomandate,</li><li>Trebuie avut în vedere că țesătura textilelor poate influența calitatea imprimării (ex.: pe o sacoșă de iută nu se recomandă litere mici/detalii fine).</li></ul></div><div class="blk"><h4>Prețul poate varia în funcție de:</h4><ul><li>Tipul imprimării, mărimea graficii, cantitate și, în anumite cazuri, numărul de culori din grafică.</li></ul></div></div></div>
+  </div>
+  <div class="info" data-i="9">
+    <h2>DTF (Direct to Film)</h2>
+    <img class="banner" src="tehnologii/dtf.jpg" alt="DTF">
+    <div class="txt"><p>DTF (Direct to Film) este o metodă modernă de imprimare digitală utilizată în special pentru personalizarea textilelor, în care designul este imprimat pe o folie specială și apoi transferat pe material prin presare termică. Această tehnică permite obținerea unor imprimeuri de înaltă calitate, cu culori vii și detalii fine, pe o varietate largă de materiale textile.</p><div class="cols"><div class="blk"><h4>Procesul pas cu pas:</h4><ol><li>Designul este pregătit în format digital, în funcție de cerințele clientului,</li><li>Imaginea este imprimată pe o folie specială (film PET) folosind cerneluri DTF,</li><li>Se aplică un strat de adeziv pudră peste cerneala încă umedă,</li><li>Folia este încălzită pentru a fixa adezivul pe design,</li><li>Designul este transferat pe material cu ajutorul unei prese termice,</li><li>Folia este îndepărtată (la cald sau la rece, în funcție de material),</li><li>Se realizează o presare finală pentru fixare și durabilitate.</li></ol></div><div class="blk"><h4>De ce este utilizată?</h4><ul><li>Permite realizarea rapidă a produselor personalizate, fără costuri mari de pregătire,</li><li>Este ideală pentru tiraje mici și medii, dar și pentru producție la cerere,</li><li>Oferă flexibilitate mare în design, fără limitări de culori sau complexitate,</li><li>Poate fi utilizată pe o gamă variată de materiale textile.</li></ul></div><div class="blk"><h4>Beneficii:</h4><ul><li>Calitate foarte bună a imprimării, cu detalii fine,</li><li>Culori vii și posibilitatea de a imprima degradeuri,</li><li>Nu există limită de culori în design,</li><li>Aderență bună pe diverse tipuri de textile,</li><li>Rezistență bună la spălare și uzură,</li><li>Nu necesită matrițe sau ecrane, reducând costurile inițiale.</li></ul></div><div class="blk"><h4>Recomandări:</h4><ul><li>Folosiți imagini de calitate mare pentru rezultate optime,</li><li>Evitați detaliile extrem de mici pentru o claritate mai bună,</li><li>Respectați temperaturile și timpii de presare recomandați,</li><li>Spălarea produselor se recomandă pe dos, la temperaturi moderate.</li></ul></div><div class="blk"><h4>Prețul poate varia în funcție de:</h4><ul><li>Dimensiunea graficii,</li><li>Cantitatea comandată,</li><li>Complexitatea designului,</li><li>Tipul materialului pe care se aplică transferul.</li></ul></div></div></div>
+  </div>
+
+<script>
+  var tiles = document.querySelectorAll(".tile");
+  var infos = document.querySelectorAll(".info");
+  function show(i) {
+    tiles.forEach(function (t) { t.classList.toggle("active", t.dataset.i == i); });
+    infos.forEach(function (p) { p.classList.toggle("show", p.dataset.i == i); });
+  }
+  tiles.forEach(function (t) { t.addEventListener("click", function () { show(t.dataset.i); }); });
+  show(0);   // first technology open by default
+</script>
+</body>
+</html>
