@@ -168,7 +168,14 @@
     tiles.forEach(function (t) { t.classList.toggle("active", t.dataset.i == i); });
     infos.forEach(function (p) { p.classList.toggle("show", p.dataset.i == i); });
   }
-  tiles.forEach(function (t) { t.addEventListener("click", function () { show(t.dataset.i); }); });
+  tiles.forEach(function (t) {
+    t.addEventListener("click", function () {
+      show(t.dataset.i);
+      // scroll the whole page down to the info (works through the Google Sites embed in most browsers)
+      var p = document.querySelector('.info[data-i="' + t.dataset.i + '"]');
+      setTimeout(function () { p.scrollIntoView({ behavior: "smooth", block: "start" }); }, 50);
+    });
+  });
   show(0);   // first technology open by default
 </script>
 </body>
