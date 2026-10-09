@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agende</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; background: transparent; }
+  body { font-family: "Rokkitt", Georgia, serif; color: #222; position: relative; }
+
+  .section { padding: 30px 10px 40px; }
+  .section + .section { border-top: 1px solid #e3c84f; }   /* thin line between sections */
+  .section h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0 0 30px;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+  }
+  .agenda {
+    width: 222px;
+    cursor: zoom-in;
+    text-align: center;
+  }
+  .agenda img {
+    width: 100%;
+    aspect-ratio: 222 / 310;
+    object-fit: cover;
+    display: block;
+    border-radius: 3px 10px 10px 3px;   /* book-like corners */
+    background: #eee;                   /* grey shows if a picture can't load */
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .agenda span {
+    display: block;
+    margin-top: 18px;
+    font-size: 21px;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .agenda:hover img { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+  .agenda:hover span { color: #e8772e; }          /* orange number on hover */
+
+  /* big picture popup */
+  #overlay {
+    position: absolute;
+    left: 0; top: 0; width: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.25s;
+    cursor: zoom-out;
+    z-index: 10;
+  }
+  #overlay.show { opacity: 1; }
+  #big {
+    position: absolute;
+    left: 50%;
+    width: 440px;
+    max-width: 90%;
+    transform: translateX(-50%) scale(0.95);
+    transition: transform 0.25s;
+    border-radius: 6px 22px 22px 6px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  }
+  #overlay.show #big { transform: translateX(-50%) scale(1); }
+
+  @media (max-width: 600px) {
+    .section h2 { font-size: 24px; }
+    .row { gap: 14px; }
+    .agenda { width: calc(50% - 7px); }
+    .agenda span { font-size: 18px; margin-top: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="content"></div>
+<div id="overlay"><img id="big" alt=""></div>
+
+<script>
+  // ↓↓↓ EDIT HERE: section name, then each agenda as ["number shown", "picture file in the agende folder"] ↓↓↓
+  var SECTIONS = [
+    ["Eco Standart", [["8710","8710.jpg"], ["8715","8715.jpg"], ["8716","8716.jpg"], ["8723","8723.jpg"], ["8725","8725.jpg"]]],
+    ["Lux-Ecru",     [["1311","1311.jpg"], ["1315","1315.jpg"], ["1315_CR","1315_cr.jpg"], ["1317","1317.jpg"],
+                      ["1319","1319.jpg"], ["1325","1325.jpg"], ["1215","1215.jpg"], ["1225","1225.jpg"]]],
+    ["Viva-Flex",    [["2210","2210_flexy.jpg"], ["2214","2214_flexy.jpg"], ["2216","2216_flexy.jpg"], ["6622","6622_flexy.jpg"]]],
+    ["Viva-Classic", [["4410","4410_classic.jpg"], ["2214","2214_classic.jpg"]]]
+  ];
+  // ↑↑↑ ↑↑↑
+
+  // build the page
+  var html = "";
+  SECTIONS.forEach(function (s) {
+    html += '<div class="section"><h2>' + s[0] + '</h2><div class="row">';
+    s[1].forEach(function (a) {
+      html += '<div class="agenda"><img src="agende/' + encodeURIComponent(a[1]) +
+              '" alt="' + a[0] + '"><span>' + a[0] + '</span></div>';
+    });
+    html += '</div></div>';
+  });
+  document.getElementById("content").innerHTML = html;
+
+  // popup
+  var overlay = document.getElementById("overlay");
+  var big = document.getElementById("big");
+
+  function openBig(img) {
+    big.src = img.currentSrc || img.src;
+    overlay.style.height = document.documentElement.scrollHeight + "px";
+    overlay.style.display = "block";
+    // show the big picture next to the agenda that was clicked
+    var r = img.getBoundingClientRect();
+    var center = r.top + window.scrollY + r.height / 2;
+    var h = Math.min(615, overlay.offsetWidth * 0.9 * 310 / 222);
+    var top = Math.max(10, Math.min(center - h / 2, overlay.offsetHeight - h - 10));
+    big.style.top = top + "px";
+    requestAnimationFrame(function () { overlay.classList.add("show"); });
+  }
+  function closeBig() {
+    overlay.classList.remove("show");
+    setTimeout(function () { overlay.style.display = "none"; }, 250);
+  }
+
+  document.getElementById("content").addEventListener("click", function (e) {
+    var a = e.target.closest(".agenda");
+    if (a) openBig(a.querySelector("img"));
+  });
+  overlay.addEventListener("click", closeBig);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeBig(); });
+</script>
+</body>
+</html>
