@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agende - Acasa</title>
+<style>
+  html, body { margin: 0; background: transparent; font-family: "Segoe UI", Roboto, Arial, sans-serif; }
+
+  .tiles {
+    display: flex;
+    gap: 30px;
+    padding: 10px;
+  }
+  .tile {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;            /* keeps the zoomed image inside the box */
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background: #eee;
+  }
+  .tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+  .tile:hover img { transform: scale(1.06); }   /* image grows slightly on hover */
+
+  .text {
+    position: absolute;
+    left: 0; right: 0; top: 24%;
+    padding: 0 12%;
+    text-align: left;
+  }
+  .tile.center .text { text-align: center; }
+  .text h3 {
+    margin: 0 0 22px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.55);
+  }
+  .text span {
+    font-size: 21px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #d9353f;              /* red underline */
+    text-shadow: 0 1px 6px rgba(0,0,0,0.55);
+    transition: color 0.3s, border-color 0.3s;
+  }
+  .tile:hover .text span { color: #e8772e; border-color: #e8772e; }   /* orange on hover */
+
+  @media (max-width: 800px) {
+    .tiles { flex-direction: column; gap: 16px; }
+    .text h3 { font-size: 26px; }
+    .text span { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- tiles link to the Agende page -->
+<div class="tiles">
+  <a class="tile" href="https://sites.google.com/suvenir.md/alvia-grup/agende" target="_top">
+    <img src="acasa/linck_1_baner.jpg" alt="Agende Made in Europa">
+    <div class="text"><h3>Agende Made in Europa</h3><span>Descoperă Acum</span></div>
+  </a>
+  <a class="tile center" href="https://sites.google.com/suvenir.md/alvia-grup/agende" target="_top">
+    <img src="acasa/linck_2_baner.jpg" alt="Design modern atrăgător">
+    <div class="text"><h3>Design modern atrăgător</h3><span>Descoperă Acum</span></div>
+  </a>
+  <a class="tile" href="https://sites.google.com/suvenir.md/alvia-grup/agende" target="_top">
+    <img src="acasa/linck_3_baner.jpg" alt="Asortiment de culori">
+    <div class="text"><h3>Asortiment de culori</h3><span>Descoperă Acum</span></div>
+  </a>
+</div>
+
+</body>
+</html>
