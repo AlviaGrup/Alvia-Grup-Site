@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clienti</title>
+<style>
+  body { margin: 0; background: transparent; }
+  html, body { width: 100%; overflow: hidden; }
+  .slider {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0;
+    /* soft fade-out on the left and right edges */
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  }
+  .track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scroll 140s linear infinite; /* bigger number = slower */
+  }
+  .track img {
+    height: 65px;     /* logo height */
+    width: auto;
+    margin: 0 60px;   /* space between logos */
+    object-fit: contain;
+    filter: grayscale(100%);   /* grey logos – delete this line for color */
+    opacity: 0.7;              /* slightly faded grey */
+    transition: filter 0.3s, opacity 0.3s;
+  }
+  .track img:hover {           /* full color when you hover a logo */
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+</style>
+</head>
+<body>
+<div class="slider">
+  <div class="track" id="track">
+    <img src="clienti/BASF.png" alt="BASF">
+    <img src="clienti/carlevana.webp" alt="carlevana">
+    <img src="clienti/darwin.png" alt="darwin">
+    <img src="clienti/EFESMoldova.jpg" alt="EFESMoldova">
+    <img src="clienti/Ellation.png" alt="Ellation">
+    <img src="clienti/EUBAM.png" alt="EUBAM">
+    <img src="clienti/FCB.png" alt="FCB">
+    <img src="clienti/Felicia.jpg" alt="Felicia">
+    <img src="clienti/Kedem_JDC.webp" alt="Kedem_JDC">
+    <img src="clienti/LeBridge.png" alt="LeBridge">
+    <img src="clienti/lidea.jpg" alt="lidea">
+    <img src="clienti/Linella.jpg" alt="Linella">
+    <img src="clienti/maib.png" alt="maib">
+    <img src="clienti/MICB.png" alt="MICB">
+    <img src="clienti/microinvest.png" alt="microinvest">
+    <img src="clienti/Moldasig.jpeg" alt="Moldasig">
+    <img src="clienti/Moldtelecom.jpg" alt="Moldtelecom">
+    <img src="clienti/nestle.jpg" alt="nestle">
+    <img src="clienti/Orange.png" alt="Orange">
+    <img src="clienti/orbico.png" alt="orbico">
+    <img src="clienti/OSCE.png" alt="OSCE">
+    <img src="clienti/OTPBank.png" alt="OTPBank">
+    <img src="clienti/PCB.png" alt="PCB">
+    <img src="clienti/PE.png" alt="PE">
+    <img src="clienti/PromoLex.png" alt="PromoLex">
+    <img src="clienti/Purcari.jpg" alt="Purcari">
+    <img src="clienti/sandra.png" alt="sandra">
+    <img src="clienti/sporter.png" alt="sporter">
+    <img src="clienti/syngenta.png" alt="syngenta">
+    <img src="clienti/Tucano.png" alt="Tucano">
+    <img src="clienti/UNDP.png" alt="UNDP">
+    <img src="clienti/UNWomen.png" alt="UNWomen">
+    <img src="clienti/VB.png" alt="VB">
+  </div>
+</div>
+<script>
+  // copies the logos once so the loop is seamless
+  var t = document.getElementById("track");
+  t.innerHTML += t.innerHTML;
+</script>
+</body>
+</html>

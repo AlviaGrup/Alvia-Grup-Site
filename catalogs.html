@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cataloage</title>
+<style>
+  html, body { margin: 0; background: transparent; }
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* centers a shorter last row */
+    gap: 40px;
+    padding: 10px;
+  }
+  .card {
+    width: calc((100% - 120px) / 4);   /* 4 per row */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #222;
+    background: #fff;
+    border: 2px solid transparent;
+    padding: 0 0 30px;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  .card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+    background: #eee;      /* grey shows if a cover can't load */
+  }
+  .card span {
+    margin-top: 28px;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+  }
+  /* hover effect */
+  .card:hover {
+    border-color: #e8772e;     /* orange border on hover */
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  }
+  .card:hover span { color: #e8772e; }   /* orange name on hover */
+
+  @media (max-width: 900px) {
+    .grid { gap: 20px; }
+    .card { width: calc((100% - 20px) / 2); }   /* 2 per row on phones */
+  }
+  @media (max-width: 500px) { .card span { font-size: 17px; margin-top: 14px; } }
+</style>
+</head>
+<body>
+<div class="grid">
+
+  <a class="card" href="https://viewer.xdcollection.com/main/en-nop/2026/" target="_blank">
+    <img src="cataloage/xd.jpg" alt="XD">
+    <span>XD</span>
+  </a>
+
+  <a class="card" href="https://player.flipsnack.com/?hash=OUZBNzVGNThCN0ErdGM5YWNja3Z4bg%3D%3D&amp;p=1" target="_blank">
+    <img src="cataloage/pf%20concept.jpg" alt="PF Concept">
+    <span>PF Concept</span>
+  </a>
+
+  <a class="card" href="https://roly.eu/ro/icatalog/urlCatRoly" target="_blank">
+    <img src="cataloage/roly.jpg" alt="ROLY">
+    <span>ROLY</span>
+  </a>
+
+  <a class="card" href="https://stamina-shop.com/en/pdfcatalog/urlCatSta" target="_blank">
+    <img src="cataloage/stamina.jpg" alt="Stamina">
+    <span>Stamina</span>
+  </a>
+
+  <a class="card" href="https://roly.eu/en/icatalog/urlCatRolyWork" target="_blank">
+    <img src="cataloage/work%20wear.jpg" alt="Work Wear">
+    <span>Work Wear</span>
+  </a>
+
+  <a class="card" href="https://download.macma.hu/catalogue/ro/index.html" target="_blank">
+    <img src="cataloage/macma.jpg" alt="MACMA">
+    <span>MACMA</span>
+  </a>
+
+  <a class="card" href="https://catalogue.beyondthehidea.com/2026/7DAmBAZ2/" target="_blank">
+    <img src="cataloage/hi%21dea.jpg" alt="Hi!dea">
+    <span>Hi!dea</span>
+  </a>
+
+  <a class="card" href="https://www.edica.pl/wp-content/uploads/2025/05/Katalog-2026_na-strone-WWW.pdf" target="_blank">
+    <img src="cataloage/edica.jpg" alt="EDICA">
+    <span>EDICA</span>
+  </a>
+
+  <a class="card" href="https://www.dropbox.com/scl/fi/i9rwdhxhbxg29anbku81n/HG_CAT_2020_PENS_spreads-medium_net.pdf?rlkey=g6kslj3k20f02bfq4omsi0pre&amp;e=1&amp;dl=0" target="_blank">
+    <img src="cataloage/leccepen%20%26%20b1.jpg" alt="Leccepen &amp; B1">
+    <span>Leccepen &amp; B1</span>
+  </a>
+
+  <a class="card" href="https://www.dropbox.com/scl/fi/snrah4pmds05dn2zugvp9/TM_2020_catalogue__LOW_spreads.pdf?rlkey=a8oad4klv99s1lt6p5xfgt8oy&amp;e=1&amp;dl=0" target="_blank">
+    <img src="cataloage/thinkme.jpg" alt="THINKME">
+    <span>THINKME</span>
+  </a>
+
+  <a class="card" href="https://catalog.aodaci.com/view/168636095/" target="_blank">
+    <img src="cataloage/aodaci.jpg" alt="AODACI">
+    <span>AODACI</span>
+  </a>
+
+</div>
+</body>
+</html>
