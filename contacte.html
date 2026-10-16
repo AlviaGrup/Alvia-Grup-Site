@@ -20,14 +20,14 @@
     box-sizing: border-box;
     padding: 24px 22px 26px;
     background: #fff;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
     border-radius: 6px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
   }
   .card:hover {
     border-color: #e8772e;                       /* orange border on hover */
-    box-shadow: 0 6px 18px rgba(232,119,46,0.18);
+    box-shadow: 0 0 0 1px #e8772e, 0 8px 22px rgba(232,119,46,0.22);   /* thicker orange edge */
     transform: translateY(-3px);
   }
 
@@ -37,7 +37,9 @@
     border-radius: 50%;
     overflow: hidden;
     display: flex; align-items: center; justify-content: center;
-    font-size: 70px; font-weight: 600; color: #fff;   /* initials, if there's no picture */
+    font-size: 70px; font-weight: 600; color: transparent;
+  }
+  .photo[style] { color: #fff;   /* initials + color circle only if there's no picture */
   }
   .photo { position: relative; }
   .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -81,8 +83,9 @@
     }).join(" / ");
     html +=
       '<div class="card">' +
-        '<div class="photo" style="background:' + p[5] + '">' +
-          '<img src="contacte/' + p[4] + '" alt="' + p[0] + '" onerror="this.remove()">' + initials +
+        '<div class="photo" data-color="' + p[5] + '">' +
+          '<img src="contacte/' + p[4] + '" alt="' + p[0] + '" ' +
+          'onerror="this.parentNode.style.background=this.parentNode.dataset.color; this.remove()">' + initials +
         '</div>' +
         '<p class="name">' + p[0] + '</p>' +
         '<p class="role">' + p[1] + '</p>' +
