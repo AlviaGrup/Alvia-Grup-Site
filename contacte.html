@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacte</title>
+<style>
+  html, body { margin: 0; background: transparent; }
+  body { font-family: "Segoe UI", Roboto, Arial, sans-serif; color: #222; }
+
+  .team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   /* a shorter last row stays centered */
+    gap: 40px;
+    padding: 12px;
+  }
+  .card {
+    width: 300px;
+    box-sizing: border-box;
+    padding: 24px 22px 26px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .card:hover {
+    border-color: #e8772e;                       /* orange border on hover */
+    box-shadow: 0 6px 18px rgba(232,119,46,0.18);
+    transform: translateY(-3px);
+  }
+
+  .photo {
+    width: 230px; height: 230px;
+    margin: 0 auto 26px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 70px; font-weight: 600; color: #fff;   /* initials, if there's no picture */
+  }
+  .photo { position: relative; }
+  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .name { font-size: 24px; margin: 0 0 8px; font-weight: 500; }
+  .role { font-size: 17px; font-weight: 700; margin: 0 0 18px; }
+  .row  { font-size: 17px; margin: 0 0 6px; }
+  .card a { color: inherit; text-decoration: none; transition: color 0.25s; }
+  .card a:hover { color: #e8772e; }
+  .mail { display: block; margin-top: 16px; font-size: 17px; color: #666 !important; }
+  .mail:hover { color: #e8772e !important; }
+
+  @media (max-width: 700px) {
+    .team { gap: 20px; }
+    .card { width: 100%; max-width: 340px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="team" id="team"></div>
+
+<script>
+  // ↓↓↓ EDIT HERE: one line per person ↓↓↓
+  // [name, role, [phones], email, picture file in the "contacte" folder, circle color if no picture]
+  var PEOPLE = [
+    ["Carolina Rusu",  "Director executiv",  ["067 600 888", "067 150 153"], "alviagrup1@gmail.com",      "carolina-rusu.png",  "#2ec4b6"],
+    ["Olga Mocanu",    "Director vânzări",   ["067 180 280"],                "alviagrup.info@gmail.com",  "olga-mocanu.png",    "#5ac8fa"],
+    ["Victoria Midari","Specialist vânzări", ["067 101 809"],                "alviagrup02@gmail.com",     "victoria-midari.png","#ffa62b"],
+    ["Olga Samotes",   "Specialist vânzări", ["067 180 280"],                "alviagrup05@gmail.com",     "olga-samotes.png",   "#ffa62b"],
+    ["Olga Ilescu",    "Designer",           ["067 101 809"],                "alvia.designer3@gmail.com", "olga-ilescu.png",    "#8e7cf0"],
+    ["Dumitru Crudu",  "Designer",           ["067 101 809"],                "alvia.designer2@gmail.com", "dumitru-crudu.png",  "#9a9a9a"]
+  ];
+  // ↑↑↑ ↑↑↑
+
+  var html = "";
+  PEOPLE.forEach(function (p) {
+    var initials = p[0].split(" ").map(function (w) { return w[0]; }).join("");
+    var phones = p[2].map(function (t) {
+      return '<a href="tel:+373' + t.replace(/\s/g, "").replace(/^0/, "") + '">' + t + '</a>';
+    }).join(" / ");
+    html +=
+      '<div class="card">' +
+        '<div class="photo" style="background:' + p[5] + '">' +
+          '<img src="contacte/' + p[4] + '" alt="' + p[0] + '" onerror="this.remove()">' + initials +
+        '</div>' +
+        '<p class="name">' + p[0] + '</p>' +
+        '<p class="role">' + p[1] + '</p>' +
+        '<p class="row">tel.: ' + phones + '</p>' +
+        '<a class="mail" href="mailto:' + p[3] + '">' + p[3] + '</a>' +
+      '</div>';
+  });
+  document.getElementById("team").innerHTML = html;
+</script>
+</body>
+</html>
